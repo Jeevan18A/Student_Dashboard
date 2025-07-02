@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo" title="Student Dashboard">
+            <img src="./images/logo.png" alt="">
+            <h2>A<span class="danger">J</span>R</h2>
+        </div>
+        <div class="navbar">
+            <a href="index.html" class="active">
+                <span class="material-icons-sharp">home</span>
+                <h3>Home</h3>
+            </a>
+            <a href="timetable.html" onclick="timeTableAll()">
+                <span class="material-icons-sharp">today</span>
+                <h3>Time Table</h3>
+            </a> 
+            <a href="exam.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>Examination</h3>
+            </a>
+            <a href="password.html">
+                <span class="material-icons-sharp">password</span>
+                <h3>Change Password</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp" onclick="">logout</span>
+                <h3>Logout</h3>
+            </a>
+        </div>
+        <div id="profile-btn">
+            <span class="material-icons-sharp">person</span>
+        </div>
+        <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+        </div>
+        
+    </header>
+    <div class="container">
+        <aside>
+            <div class="profile">
+                <div class="top">
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p>Hey, <b>A Jeevan Reddy</b> </p>
+                        <small class="text-muted">CH.EN.U4AIE22001</small>
+                    </div>
+                </div>
+                <div class="about">
+                    <h5>Course</h5><p>BTech. Computer Science & Engineering (Artificial Intelligence)</p>
+                    <h5>DOB</h5><p>18-Nov-2004</p>
+                    <h5>Contact</h5><p>9154545479</p>
+                    <h5>Email</h5><p>ajeevanreddy2004@gmail.com</p>
+                    <h5>Address</h5><p>Tirupati, Andhra Pradesh</p>
+                </div>
+            </div>
+        </aside>
+
+<main>
+    <h1>Attendance</h1>
+    <div class="subjects">
+        <div class="rl">
+            <span class="material-icons-sharp">auto_awesome</span>
+            <h3>Reinforcement Learning</h3>
+            <h2>11/11</h2>
+            <div class="progress">
+                <svg><circle cx="38" cy="38" r="36" style="stroke-dasharray: 226.19; stroke-dashoffset: 0;"></circle></svg>
+                <div class="number"><p>100%</p></div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+        </div>
+        <div class="sdp">
+            <span class="material-icons-sharp">design_services</span>
+            <h3>Software Design Patterns</h3>
+            <h2>7/7</h2>
+            <div class="progress">
+                <svg><circle cx="38" cy="38" r="36" style="stroke-dasharray: 226.19; stroke-dashoffset: 0;"></circle>></circle></svg>
+                <div class="number"><p>100%</p></div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+        </div>
+        <div class="fsd">
+            <span class="material-icons-sharp">web</span>
+            <h3>Full Stack Development</h3>
+            <h2>8/8</h2>
+            <div class="progress">
+                <svg><circle cx="38" cy="38" r="36" style="stroke-dasharray: 226.19; stroke-dashoffset: 0;"></circle>></circle></svg>
+                <div class="number"><p>100%</p></div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+        </div>
+        <div class="ic">
+            <span class="material-icons-sharp">gavel</span>
+            <h3>Indian Constitution</h3>
+            <h2>3/5</h2>
+            <div class="progress">
+                <svg><circle cx="38" cy="38" r="36" style="stroke-dasharray: 226.19; stroke-dashoffset: 56.54;"></circle>></circle></svg>
+                <div class="number"><p>75%</p></div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+        </div>
+        <div class="ppi">
+            <span class="material-icons-sharp">code</span>
+            <h3>Project Phase I</h3>
+            <h2>10/10</h2>
+            <div class="progress">
+                <svg><circle cx="38" cy="38" r="36" style="stroke-dasharray: 226.19; stroke-dashoffset: 0;"></circle>></circle></svg>
+                <div class="number"><p>100%</p></div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+        </div>
+        <div class="cpc">
+            <span class="material-icons-sharp">school</span>
+            <h3>Career Prep Class</h3>
+            <h2>2/2</h2>
+            <div class="progress">
+                <svg><circle cx="38" cy="38" r="36" style="stroke-dasharray: 226.19; stroke-dashoffset: 0;"></circle>></circle></svg>
+                <div class="number"><p>100%</p></div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+        </div>
+    </div>
+
+    <div class="timetable" id="timetable">
+                <div>
+                    <span id="prevDay">&lt;</span>
+                    <h2>Today's Timetable</h2>
+                    <span id="nextDay">&gt;</span>
+                </div>
+                <span class="closeBtn" onclick="timeTableAll()">X</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Room No.</th>
+                            <th>Subject</th>
+                            <th>Faculty</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+    </main>
+
+
+        <div class="right">
+            <div class="announcements">
+                <h2>Announcements</h2>
+                <div class="updates">
+                    <div class="message">
+                        <p> <b>Academic</b> Summer training internship with Live Projects.</p>
+                        <small class="text-muted">2 Minutes Ago</small>
+                    </div>
+                    <div class="message">
+                        <p> <b>Co-curricular</b> Global internship oportunity by Student organization.</p>
+                        <small class="text-muted">10 Minutes Ago</small>
+                    </div>
+                    <div class="message">
+                        <p> <b>Examination</b> Instructions for Mid Term Examination.</p>
+                        <small class="text-muted">Yesterday</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leaves">
+                <h2>Faculty info</h2>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-2.png" alt=""></div>
+                    <div class="info">
+                        <h3>Dr. R Prasanna Kumar</h3>
+                        <small class="text-muted">The Professor</small>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-3.png" alt=""></div>
+                    <div class="info">
+                        <h3>Dr. G Bharathi Mohan</h3>
+                        <small class="text-muted">Assistant Professor (SG)•CSE</small>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-5.jpeg" alt=""></div>
+                    <div class="info">
+                        <h3>R Annamalai</h3>
+                        <small class="text-muted">Assistant Professor (SG)•CSE</small>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-6.png" alt=""></div>
+                    <div class="info">
+                        <h3>Dr K Venkataraman</h3>
+                        <small class="text-muted">Visiting Faculty•AIE</small>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-4.png" alt=""></div>
+                    <div class="info">
+                        <h3>Dr. C. Sarathchandran </h3>
+                        <small class="text-muted">Assistant Professor•Sciences</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="timeTable.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
